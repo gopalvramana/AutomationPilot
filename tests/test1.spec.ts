@@ -38,6 +38,5 @@ test('Page sample test', async ({ page }) => {
    await dropdown2.selectOption({ index: 2 }); //select the second option using lable
    const selectedvalue2 = await dropdown2.inputValue(); //get the selected value
    expect (selectedvalue1).toBe('option3'); //verify the selected value.
-
    
   });
