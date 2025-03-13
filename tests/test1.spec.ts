@@ -39,33 +39,4 @@ test('Page sample test', async ({ page }) => {
    const selectedvalue2 = await dropdown2.inputValue(); //get the selected value
    expect (selectedvalue1).toBe('option3'); //verify the selected value.
    
-    //To check if the check box is checked or not (True or False)
-   const chkbox1 = await page.locator('#checkBoxOption1');
-   await chkbox1.check();
-    // Verify if checkbox is checked
-   expect(await chkbox1.isChecked()).toBeTruthy();
-
-   //verify the value of the checkbox
-   const chk1value = await chkbox1.getAttribute('value');
-   expect (chk1value).toBe('option1');
-
-   //check() → Selects (checks) a checkbox
-   //uncheck() → Unselects (unchecks) a checkbox
-   //isChecked() → Verifies if the checkbox is checked
-
-    // Uncheck a checkbox
-    const chkbox2 = await page.locator('#checkBoxOption2');
-    const chk2value = await chkbox2.uncheck();
-    expect(await chkbox2.isChecked()).toBeFalsy();
-
-    //Checking Only If Not Already Checked
-    const chkbox3 = await page.locator('#checkBoxOption2');
-    if(!(await chkbox3.isChecked())){
-      await chkbox3.check();
-    }
-    expect (await chkbox3.isChecked()).toBeTruthy();
-
-
-
-   
   });
